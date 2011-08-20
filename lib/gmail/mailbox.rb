@@ -169,7 +169,7 @@ class Gmail
 	# @param args [Array,Hash] As for {#emails}
 	# @return [Number] Number of emails that match search criteria
     def count(*args)
-      emails(*args).length
+      emails(*args).size
     end
 
 	# @endgroup
