@@ -186,7 +186,16 @@ class Gmail
     if logged_in?
       res = @imap.logout
       @logged_in = false if res.name == 'OK'
-    end
+	end
+  end
+  
+  # disconnect() from server
+  def disconnect
+    disconnected = @imap.disconnected?
+	if(!disconnected)
+		@imap.disconnect
+	end
+	disconnected = @imap.disconnected?
   end
 
   # @endgroup
